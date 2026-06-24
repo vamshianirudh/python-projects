@@ -31,3 +31,8 @@ resources = {
 }
 
 
+def report():
+    for resource in resources:
+        print(f"{resource} : {resources[resource]}")
+
+report()
