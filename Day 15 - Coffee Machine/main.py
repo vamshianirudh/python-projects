@@ -25,10 +25,10 @@ MENU = {
 }
 
 resources = {
-    "Water": 300,
-    "Milk": 200,
-    "Coffee": 100,
-    "Money" : 0 #added money to make reports easier
+    "water": 300,
+    "milk": 200,
+    "coffee": 100,
+    "money": 0
 }
 
 print(MENU["cappuccino"]["ingredients"])
@@ -39,11 +39,9 @@ def report():
 
 
 def resource_update(user_choice):
-    for item in MENU.keys(): # going through each item needed for that coffee
-        if user_choice == item: #trying to match the user choice with key item in the menu
-                for i in MENU[item]["ingredients"]:
-                    for resource in resources.keys():
-                        
+    for ingredient in MENU[user_choice]["ingredients"]:
+        resources[ingredient] -= MENU[user_choice]["ingredients"][ingredient]
+
 
 
 
@@ -61,6 +59,8 @@ while is_machine_on:
     user_choice = input("What would you like? (espresso/latte/cappuccino): ").lower()
 
     resource_update(user_choice)
+
+    report()
 
 
 
