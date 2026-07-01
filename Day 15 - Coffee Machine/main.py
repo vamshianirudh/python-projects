@@ -31,17 +31,40 @@ resources = {
     "Money" : 0 #added money to make reports easier
 }
 
+print(MENU["cappuccino"]["ingredients"])
 is_machine_on = True
 def report():
     for resource in resources:
         print(f"{resource} : {resources[resource]}")
 
-report()
+
+def resource_update(user_choice):
+    for item in MENU.keys(): # going through each item needed for that coffee
+        if user_choice == item: #trying to match the user choice with key item in the menu
+                for i in MENU[item]["ingredients"]:
+                    for resource in resources.keys():
+                        
+
+
+
+
+def coffee_machine(user_choice):
+    if user_choice == "report":
+        report()
+    elif user_choice == "cappuccino":
+        pass
+
 
 
 while is_machine_on:
 
-    user_choice = input("What would you like? (espresso/latte/cappuccino):")
+    user_choice = input("What would you like? (espresso/latte/cappuccino): ").lower()
+
+    resource_update(user_choice)
+
+
+
+
 
 
 
