@@ -25,14 +25,24 @@ MENU = {
 }
 
 resources = {
-    "water": 300,
-    "milk": 200,
-    "coffee": 100,
+    "Water": 300,
+    "Milk": 200,
+    "Coffee": 100,
+    "Money" : 0 #added money to make reports easier
 }
 
-
+is_machine_on = True
 def report():
     for resource in resources:
         print(f"{resource} : {resources[resource]}")
 
 report()
+
+
+while is_machine_on:
+
+    user_choice = input("What would you like? (espresso/latte/cappuccino):")
+
+
+
+
