@@ -39,8 +39,11 @@ def report():
 
 
 def resource_update(user_choice):
-    for ingredient in MENU[user_choice]["ingredients"]:
+    for ingredient in MENU[user_choice]["ingredients"]: # goes into ingredients of the user_choice for comparison
         resources[ingredient] -= MENU[user_choice]["ingredients"][ingredient]
+
+    resources["money"] += MENU[user_choice]["cost"] #need to update the cost only once, for loop will increment the cost for each ingredient
+
 
 
 
